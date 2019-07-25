@@ -21,9 +21,7 @@ public class StudentList {
 			
 			try {
 				
-				BufferedReader textReader = bufferedReader();
-				String stringReader = textReader.readLine();
-				String words[] = stringReader.split(", ");
+				String words[] = bufferedReader().readLine().split(", ");
 				
 				for(String word : words) {
 					
@@ -42,11 +40,8 @@ public class StudentList {
 			
 			try {
 				
-				BufferedReader textReader = bufferedReader();
-				String stringReader = textReader.readLine();
-				String words[] = stringReader.split(", ");	
-				Random randomData = new Random();
-				int index = randomData.nextInt(4);
+				String words[] = bufferedReader().readLine().split(", ");	
+				int index = new Random().nextInt(4);
 				System.out.println(words[index]);
 			}
 
@@ -61,14 +56,9 @@ public class StudentList {
 			
 			try {
 		
-				BufferedWriter textReader = bufferedWriter();
-				String subString = args[0].substring(1);
-				Date date = new Date();
-				String dateStyle = "dd/mm/yyyy-hh:mm:ss a";
-				DateFormat dateFormat = new SimpleDateFormat(dateStyle);
-				String formatStyle = dateFormat.format(date);
-				textReader.write(", "+subString+"\nList last updated on "+formatStyle);
-				textReader.close();
+				DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy-hh:mm:ss a");
+				bufferedWriter().write(", "+args[0].substring(1)+"\nList last updated on "+dateFormat.format(new Date()));
+				bufferedWriter().close();
 			} 
 			
 			catch (Exception e){}
@@ -82,14 +72,11 @@ public class StudentList {
 			
 			try {
 				
-				BufferedReader textReader = bufferedReader();
-				String stringReader = textReader.readLine();
-				String words[] = stringReader.split(",");	
+				String words[] = bufferedReader().readLine().split(",");	
 				boolean done = false;
-				String subString = args[0].substring(1);
 				for(int index = 0; index<words.length && !done; index++) {
 					
-					if(words[index].equals(subString)) {
+					if(words[index].equals(args[0].substring(1))) {
 						
 						System.out.println("We found it!");
 						done = true;
@@ -111,9 +98,7 @@ public class StudentList {
 			
 			try {
 				
-				BufferedReader textReader = bufferedReader();
-				String lineReader = textReader.readLine();
-				char array[] = lineReader.toCharArray();			
+				char array[] = bufferedReader().readLine().toCharArray();			
 				boolean intWord = false;
 				int count = 0;
 				for(char c : array) {
