@@ -97,25 +97,14 @@ public class StudentList {
 			
 			try {
 				
-				char array[] = bufferedReader().readLine().toCharArray();			
-				boolean intWord = false;
+				char array[] = bufferedReader().readLine().toCharArray();
+				
 				int count = 0;
-				for(char c : array) {
+				for(char character : array) {
 					
-					if(c ==' ') {
+					if(character ==' ') {
 						
-						if (!intWord) {
-							
-							count++;
-							intWord = true;
-							
-						}
-						
-						else {
-							
-							intWord = false;
-							
-						}
+						count++;
 						
 					}
 					
