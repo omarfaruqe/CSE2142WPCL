@@ -73,13 +73,12 @@ public class StudentList {
 			try {
 				
 				String words[] = bufferedReader().readLine().split(",");	
-				boolean done = false;
-				for(int index = 0; index<words.length && !done; index++) {
+				for(int index = 0; index<words.length; index++) {
 					
 					if(words[index].equals(args[0].substring(1))) {
 						
 						System.out.println("We found it!");
-						done = true;
+						break;
 						
 					}
 					
