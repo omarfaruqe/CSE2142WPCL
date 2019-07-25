@@ -5,7 +5,8 @@ import java.util.*;
 public class StudentList {
 	
 	public static void main(String[] args) {
-
+		
+		Constants constant = new Constants();
 //		Check arguments
 
 		if(args.length != 1) {
@@ -14,7 +15,7 @@ public class StudentList {
 			return;
 		}
 		
-		if(args[0].equals("a")) {
+		if(args[0].equals(constant.printAll)) {
 			
 			System.out.println("Loading data ...");		
 			
@@ -35,7 +36,7 @@ public class StudentList {
 			System.out.println("Data Loaded.");
 		}
 		
-		else if(args[0].equals("r")) {
+		else if(args[0].equals(constant.randomPrint)) {
 			
 			System.out.println("Loading data ...");	
 			
@@ -54,7 +55,7 @@ public class StudentList {
 			
 		}
 		
-		else if(args[0].contains("+")){
+		else if(args[0].contains(constant.appendWord)){
 			
 			System.out.println("Loading data ...");	
 			
@@ -75,7 +76,7 @@ public class StudentList {
 			
 		}
 		
-		else if(args[0].contains("?")) {
+		else if(args[0].contains(constant.checkWord)) {
 			
 			System.out.println("Loading data ...");		
 			
@@ -104,7 +105,7 @@ public class StudentList {
 			
 		}
 		
-		else if(args[0].contains("c")) {
+		else if(args[0].contains(constant.countWord)) {
 			
 			System.out.println("Loading data ...");	
 			
