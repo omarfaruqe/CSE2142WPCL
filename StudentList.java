@@ -20,7 +20,7 @@ public class StudentList {
 			
 			try {
 				
-				BufferedReader textReader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
+				BufferedReader textReader = bufferedReader();
 				String stringReader = textReader.readLine();
 				String words[] = stringReader.split(", ");
 				
@@ -41,7 +41,7 @@ public class StudentList {
 			
 			try {
 				
-				BufferedReader textReader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
+				BufferedReader textReader = bufferedReader();
 				String stringReader = textReader.readLine();
 				String words[] = stringReader.split(", ");	
 				Random randomData = new Random();
@@ -60,7 +60,7 @@ public class StudentList {
 			
 			try {
 		
-				BufferedWriter textReader = new BufferedWriter(new FileWriter("students.txt", true));
+				BufferedWriter textReader = bufferedWriter();
 				String subString = args[0].substring(1);
 				Date date = new Date();
 				String dateStyle = "dd/mm/yyyy-hh:mm:ss a";
@@ -81,7 +81,7 @@ public class StudentList {
 			
 			try {
 				
-				BufferedReader textReader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
+				BufferedReader textReader = bufferedReader();
 				String stringReader = textReader.readLine();
 				String words[] = stringReader.split(",");	
 				boolean done = false;
@@ -110,7 +110,7 @@ public class StudentList {
 			
 			try {
 				
-				BufferedReader textReader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
+				BufferedReader textReader = bufferedReader();
 				String lineReader = textReader.readLine();
 				char array[] = lineReader.toCharArray();			
 				boolean intWord = false;
@@ -145,4 +145,36 @@ public class StudentList {
 		
 		}
 	}
+	
+	public static BufferedReader bufferedReader(){
+		
+		BufferedReader reader = null;
+		
+		try{
+			
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
+			
+		}
+		
+		catch(Exception e) {}
+		return reader;
+		
+	}
+	
+	public static BufferedWriter bufferedWriter(){
+		
+		BufferedWriter writer = null;
+		
+		try{
+			
+			writer = new BufferedWriter(new FileWriter("students.txt", true));
+			
+		}
+		
+		catch(Exception e) {}
+		return writer;
+		
+	}
+	
+	
 }
