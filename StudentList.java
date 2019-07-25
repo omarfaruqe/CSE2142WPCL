@@ -6,15 +6,18 @@ public class StudentList {
 	
 	public static void main(String[] args) {
 		
+		//Make a object of the Constants class.
 		Constants constant = new Constants();
 //		Check arguments
-
+		
+		//if user do not give any arguments then the condition catch it.
 		if(args.length != 1) {
 			
 			System.out.println("Invalid operation\nPlease enter a proper arguments : ");
 			return;
 		}
 		
+		//For print all value.
 		if(args[0].equals(constant.printAll)) {
 			
 			System.out.println("Loading data ...");		
@@ -34,6 +37,7 @@ public class StudentList {
 			System.out.println("Data Loaded.");
 		}
 		
+		// Randomly print value.
 		else if(args[0].equals(constant.randomPrint)) {
 			
 			System.out.println("Loading data ...");	
@@ -50,6 +54,7 @@ public class StudentList {
 			
 		}
 		
+		//To add something in the stuent.text file.
 		else if(args[0].contains(constant.appendWord)){
 			
 			System.out.println("Loading data ...");	
@@ -66,6 +71,7 @@ public class StudentList {
 			
 		}
 		
+		// To check the searching word.
 		else if(args[0].contains(constant.checkWord)) {
 			
 			System.out.println("Loading data ...");		
@@ -91,6 +97,7 @@ public class StudentList {
 			
 		}
 		
+		//How many words in student.text.
 		else if(args[0].contains(constant.countWord)) {
 			
 			System.out.println("Loading data ...");	
@@ -119,10 +126,12 @@ public class StudentList {
 		
 		}
 		
+		//If user give wrong input then the condition catch it.
 		else 
 			System.out.println("Give proper input.");
 	}
 	
+	//This is BufferReader method to read the student.text file read.
 	public static BufferedReader bufferedReader(){
 		
 		BufferedReader reader = null;
@@ -138,6 +147,7 @@ public class StudentList {
 		
 	}
 	
+	//This BufferWriter method to write the reading words.
 	public static BufferedWriter bufferedWriter(){
 		
 		BufferedWriter writer = null;
