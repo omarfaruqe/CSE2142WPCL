@@ -78,12 +78,12 @@ public class StudentList {
 				BufferedReader bufferedReader = new BufferedReader(
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
-				String D = bufferedReader.readLine();
-				char a[] = D.toCharArray();
+				String Line = bufferedReader.readLine();
+				char words[] = Line.toCharArray();
 				boolean in_word = true;
-				int count=0;
-				for(char c:a) {
-					if(c ==' ') {
+				int count = 0;
+				for(char word : words) {
+					if(word == ' ') {
 						count++;
 						in_word = true;
 					}
@@ -100,6 +100,6 @@ public class StudentList {
 			System.out.println("Data Loaded.");				
 		}
 		else
-			System.out.println("Wrong Input of argument. Give inputes "AlineSplit", "RandomStudent","CountWord", "+", "?"");
+			System.out.println("Wrong Input of argument. Give inputes");
 	}
 }
