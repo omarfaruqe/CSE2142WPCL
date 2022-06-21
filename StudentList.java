@@ -100,6 +100,6 @@ public class StudentList {
 			System.out.println("Data Loaded.");				
 		}
 		else
-			System.out.println("Wrong Input of argument. Give inputes");
+			System.out.println("Wrong Input of argument. Give Valid inputes");
 	}
 }
