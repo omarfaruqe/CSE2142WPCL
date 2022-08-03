@@ -20,4 +20,5 @@ public abstract class Constants {
     public static String addX = "+X :  add student with name X in the list";
     public static String askX = "?X :  search for student named X in the list";
     public static char charDelimator = ',';
+    public static char space = ' ';
 }

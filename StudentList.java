@@ -33,8 +33,7 @@ public class StudentList {
         } else if (args[0].equals(Constants.random)) {
             //this will print a random student
             System.out.println(Constants.loading);
-            String studentList = getString();
-            String names[] = studentList.split(Constants.delimator);
+            String names[] = getString().split(Constants.delimator);
             System.out.println(names[new Random().nextInt(4)]);
             System.out.println(Constants.loaded);
         } else if (args[0].contains(Constants.plus)) {
@@ -43,10 +42,7 @@ public class StudentList {
             try {
                 BufferedWriter bufferWriter = new BufferedWriter(
                         new FileWriter(Constants.file, true));
-                String name = args[0].substring(1);
-                String dateformat = Constants.dateFormat;
-                String formattedDate = new SimpleDateFormat(dateformat).format(new Date());
-                bufferWriter.write(Constants.delimator + name + Constants.update + formattedDate);
+                bufferWriter.write(Constants.delimator + args[0].substring(1) + Constants.update + new SimpleDateFormat(Constants.dateFormat).format(new Date()));
                 bufferWriter.close();
             } catch (Exception e) {
             }
@@ -73,7 +69,7 @@ public class StudentList {
                 String line = getString();
                 int count = 1;
                 for (Character c : line.toCharArray()) {
-                    if (c == Constants.charDelimator) {
+                    if (c == Constants.space) {
                         count++; 
                     }
                 }
