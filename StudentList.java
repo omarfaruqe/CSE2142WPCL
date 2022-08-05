@@ -39,7 +39,6 @@ public class StudentList {
 				Date date = new Date();
 				String df = Constant.Date;
 				DateFormat dateFormat = new SimpleDateFormat(df);
-				//String fd = 
 				bufferedWriter.write(Constant.SplitComa + string + Constant.LastUpdate + dateFormat.format(date));
 				bufferedWriter.close();
 			} catch (Exception e){
