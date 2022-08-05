@@ -4,9 +4,8 @@ import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
 //		Check arguments
-    if(args[0].length() <= 1)
-			{
-				System.out.println(Constant.WrongInput);
+    		if(args[0].length() <= 1){
+			System.out.println(Constant.WrongInput);
 			}
 		if(args[0].equals(Constant.ShowAll)) {
 			System.out.println(Constant.Loading);
@@ -39,6 +38,7 @@ public class StudentList {
 				Date date = new Date();
 				String df = Constant.Date;
 				DateFormat dateFormat = new SimpleDateFormat(df);
+				//String fd = 
 				bufferedWriter.write(Constant.SplitComa + string + Constant.LastUpdate + dateFormat.format(date));
 				bufferedWriter.close();
 			} catch (Exception e){
