@@ -4,10 +4,10 @@ import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
 //		Check arguments
-        if(args[0].length() <= 1)
-		{
-			System.out.println(Constant.WrongInput);
-		}
+    if(args[0].length() <= 1)
+			{
+				System.out.println(Constant.WrongInput);
+			}
 		if(args[0].equals(Constant.ShowAll)) {
 			System.out.println(Constant.Loading);
 			try {
@@ -25,8 +25,7 @@ public class StudentList {
 			try {
 				String[] Names = getStrings();
 				Random random = new Random();
-				int studentIndex = random.nextInt(4);
-				System.out.println(Names[studentIndex]);
+				System.out.println(Names[random.nextInt(4)]);
 			} catch (Exception e){
 			}
 			System.out.println(Constant.Loaded);
@@ -40,8 +39,8 @@ public class StudentList {
 				Date date = new Date();
 				String df = Constant.Date;
 				DateFormat dateFormat = new SimpleDateFormat(df);
-				String fd = dateFormat.format(date);
-				bufferedWriter.write(Constant.SplitComa + string + Constant.LastUpdate + fd);
+				//String fd = 
+				bufferedWriter.write(Constant.SplitComa + string + Constant.LastUpdate + dateFormat.format(date));
 				bufferedWriter.close();
 			} catch (Exception e){
 			}
@@ -55,12 +54,11 @@ public class StudentList {
 								new FileInputStream(Constant.StudentList)));
 				String Line = bufferedReader.readLine();
 				String i[] = Line.split(Constant.SplitComa);
-				boolean done = false;
 				String t = args[0].substring(1);
-				for(int idx = 0; idx<i.length && !done; idx++) {
+				for(int idx = 0; idx<i.length; idx++) {
 					if(i[idx].equals(t)) {
 						System.out.println(Constant.FoundStudent);
-						done=true;
+						break;
 					}
 				}
 			} catch (Exception e){
@@ -71,7 +69,6 @@ public class StudentList {
 			System.out.println(Constant.Loading);
 			try {
 				String[] Names = getStrings();
-				boolean in_word = true;
 				int count = 0;
 				for(String word : Names) {
 					count++;
