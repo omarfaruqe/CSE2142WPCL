@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.text.*;
 import java.util.*;
@@ -66,7 +67,7 @@ public class StudentList {
         } else if (args[0].contains(Constants.count)) {
             System.out.println(Constants.loading);
             try {
-                String line = getString();
+                String line = getString();  
                 int count = 1;
                 for (Character c : line.toCharArray()) {
                     if (c == Constants.space) {
@@ -83,6 +84,7 @@ public class StudentList {
     }
 
     private static void ArgumentMessage() {
+        //show possible options
         System.out.println(Constants.argumentError);
         System.out.println(Constants.list);
         System.out.println(Constants.a);
