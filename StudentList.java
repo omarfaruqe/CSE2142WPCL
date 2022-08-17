@@ -3,33 +3,36 @@ import java.text.*;
 import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
-//		Check arguments
-    		if(args[0].length() <= 1){
+//		Check arguments if their length is less then 1 or not
+    if(args[0].length() <= 1){
 			System.out.println(Constant.WrongInput);
 			}
-		if(args[0].equals(Constant.ShowAll)) {
+		if(args[0].equals(Constant.ShowAll)) { // shows all names of StudentList file
 			System.out.println(Constant.Loading);
 			try {
 				String[] Names = getStrings();
 				for(String student : Names) {
 					System.out.println(student);
 				}
+        System.out.println(Constant.Loaded);
 			}
 			catch (Exception e){
+        System.out.println(Constant.NotLoaded);
 			}
-			System.out.println(Constant.Loaded);
 		}
-		else if(args[0].equals(Constant.RandomStudent)) {
+		else if(args[0].equals(Constant.RandomStudent)) { // shows random student
 			System.out.println(Constant.Loading);
 			try {
 				String[] Names = getStrings();
 				Random random = new Random();
 				System.out.println(Names[random.nextInt(4)]);
-			} catch (Exception e){
+        System.out.println(Constant.Loaded);
+			} 
+      catch (Exception e){
+        System.out.println(Constant.NotLoaded);
 			}
-			System.out.println(Constant.Loaded);
 		}
-		else if(args[0].contains(Constant.AddStudent)) {
+		else if(args[0].contains(Constant.AddStudent)) { //Adds new student in the StudentList file
 			System.out.println(Constant.Loading);
 			try {
 				BufferedWriter bufferedWriter = new BufferedWriter(
@@ -41,11 +44,13 @@ public class StudentList {
 				//String fd = 
 				bufferedWriter.write(Constant.SplitComa + string + Constant.LastUpdate + dateFormat.format(date));
 				bufferedWriter.close();
-			} catch (Exception e){
+        System.out.println(Constant.Loaded);
+			} 
+      catch (Exception e){
+        System.out.println(Constant.NotLoaded);
 			}
-			System.out.println(Constant.Loaded);
 		}
-		else if(args[0].contains(Constant.SearchStudent)) {
+		else if(args[0].contains(Constant.SearchStudent)) { // search a perticular student from StudentList file
 			System.out.println(Constant.Loading);
 			try {
 				BufferedReader bufferedReader = new BufferedReader(
@@ -59,12 +64,14 @@ public class StudentList {
 						System.out.println(Constant.FoundStudent);
 						break;
 					}
+          System.out.println(Constant.Loaded);
 				}
-			} catch (Exception e){
+			} 
+      catch (Exception e){
+        System.out.println(Constant.NotLoaded);
 			}
-			System.out.println(Constant.Loaded);
 		}
-		else if(args[0].contains(Constant.CountWord)) {
+		else if(args[0].contains(Constant.CountWord)) { // counts number of students from StudentList file
 			System.out.println(Constant.Loading);
 			try {
 				String[] Names = getStrings();
@@ -73,12 +80,14 @@ public class StudentList {
 					count++;
 				}
 				System.out.println(count + Constant.WordsFound);
-			} catch (Exception e){
+        System.out.println(Constant.Loaded);
+			} 
+      catch (Exception e){
+        System.out.println(Constant.NotLoaded);
 			}
-			System.out.println(Constant.Loaded);
 		}
 		else {
-			System.out.println(Constant.WrongInput);
+			System.out.println(Constant.WrongInput); // shows wrong input message and shows also what are the correct inputs
 		}
 	}
 
