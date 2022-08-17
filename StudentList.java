@@ -7,7 +7,7 @@ public class StudentList {
     if(args[0].length() <= 1){
 			System.out.println(Constant.WrongInput);
 			}
-		if(args[0].equals(Constant.ShowAll)) { // shows all names of StudentList file
+		if(args[0].equals(Constant.ShowAll)) { // shows all names of Students.txt file
 			System.out.println(Constant.Loading);
 			try {
 				String[] Names = getStrings();
@@ -20,7 +20,7 @@ public class StudentList {
         System.out.println(Constant.NotLoaded);
 			}
 		}
-		else if(args[0].equals(Constant.RandomStudent)) { // shows random student
+		else if(args[0].equals(Constant.RandomStudent)) { // shows random student of Students.txt file
 			System.out.println(Constant.Loading);
 			try {
 				String[] Names = getStrings();
@@ -32,7 +32,7 @@ public class StudentList {
         System.out.println(Constant.NotLoaded);
 			}
 		}
-		else if(args[0].contains(Constant.AddStudent)) { //Adds new student in the StudentList file
+		else if(args[0].contains(Constant.AddStudent)) { //Adds new student in the Students.txt file
 			System.out.println(Constant.Loading);
 			try {
 				BufferedWriter bufferedWriter = new BufferedWriter(
@@ -50,7 +50,7 @@ public class StudentList {
         System.out.println(Constant.NotLoaded);
 			}
 		}
-		else if(args[0].contains(Constant.SearchStudent)) { // search a perticular student from StudentList file
+		else if(args[0].contains(Constant.SearchStudent)) { // search a perticular student from Students.txt file
 			System.out.println(Constant.Loading);
 			try {
 				BufferedReader bufferedReader = new BufferedReader(
@@ -71,7 +71,7 @@ public class StudentList {
         System.out.println(Constant.NotLoaded);
 			}
 		}
-		else if(args[0].contains(Constant.CountWord)) { // counts number of students from StudentList file
+		else if(args[0].contains(Constant.CountWord)) { // counts number of students from Students.txt file
 			System.out.println(Constant.Loading);
 			try {
 				String[] Names = getStrings();
